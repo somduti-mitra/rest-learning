@@ -57,27 +57,33 @@ public class MovieController {
 	public Object retrieveMovie(@QueryParam("genre") char genre) {
 		return movieService.retrieve(genre);
 	}
-	
+
 	@GET
 	@Path("/withalphabet")
-	@Produces({MediaType.APPLICATION_JSON })
-	public Object retrieveNames(@QueryParam("movieCharacter")char movieName, @QueryParam("genretype")char genre) {
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Object retrieveNames(@QueryParam("movieCharacter") char movieName, @QueryParam("genretype") char genre) {
 		return movieService.retrieval(movieName, genre);
 	}
 	
 	@GET
+	@Path("/test/{param1}/{param2}")
+	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+	 public List<Movie> comparingonIds(@PathParam("param1") char movieName, @PathParam ("param2") char genre  ){
+		return movieService.retrieval(movieName, genre);
+	}
+
+	@GET
 	@Path("/sort")
-	@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
 	public List<Movie> comparing() {
 		return movieService.defaultSort();
-		
+
 	}
-	@GET
-	@Path("/sortonid")
-	@Produces(MediaType.APPLICATION_XML)
-	public List<Movie> comparingonId(){
-		return movieService.sortonid();
-		
-	}
-	
+
+	@GET	
+	 @Path("/sortonid")
+	 @Produces(MediaType.APPLICATION_XML) public List<Movie> comparingonId() {
+	 return movieService.sortonid();	 
+	 }
+
 }

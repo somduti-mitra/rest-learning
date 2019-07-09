@@ -13,7 +13,7 @@ public class Moviedatabase {
 		movielist.add(new Movie("Kabeer Singh", "Romantic", 3));
 		movielist.add(new Movie("Kabir Singh", "History", 9));
 		movielist.add(new Movie("Somduti", "Biopic", 10));
-		movielist.add(new Movie("Sanjay", "Biopic", 8));
+		movielist.add(new Movie("Sanjay", "Biopic", 10));
 		movielist.add(new Movie("Accenture", "Thriller", 4));
 	}
 
